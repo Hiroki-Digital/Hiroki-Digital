@@ -10,7 +10,7 @@
  * email          Shown as the fallback contact if a form ever fails to send.
  */
 window.HIROKI = {
-  sheetEndpoint: "",
+  sheetEndpoint: "https://script.google.com/macros/s/AKfycbygbyjsye6WQELBjDsiFv2umK0IL5jODUH20QhTj40s4VTHH8Wl4rgrqDlKO298Im2e/exec",
   gtmId: "",
   email: "hello@hirokidigital.com",
   // On these domains an unconnected form shows an "email us" message instead of preview mode.
