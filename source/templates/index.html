@@ -1,0 +1,265 @@
+{% extends "base.html" %}
+{% from "_macros.html" import icon, arrow, faq_list, lead_form, wireframe, nap with context %}
+{% block main %}
+<section class="hero">
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="crumb"><b>hirokidigital.com</b><i>›</i>australia · new zealand</p>
+      <h1>SEO &amp; Website Design Agency in Australia &amp; New Zealand</h1>
+      <p class="tagline tagline--hero">Be the business people <span class="hl">find first</span>.</p>
+      <p class="lede">Hiroki Digital builds fast websites, runs focused marketing campaigns and grows your Google rankings. One small team looks after the whole path from search to enquiry.</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary btn--lg" href="#contact">Get a free growth plan {{ arrow() }}</a>
+        <a class="btn btn--ghost btn--lg" href="#services">Explore services</a>
+      </div>
+      <ul class="ticks">
+        <li>Free audit, no obligation</li>
+        <li>Month-to-month, no lock-in</li>
+        <li>Reply within one business day</li>
+      </ul>
+    </div>
+    <div class="hero__art">
+      <div class="stack" role="img" aria-label="Illustration: a new website, a search result climbing to position one, and a campaign chart with enquiries rising.">
+        <div class="slot slot--browser"><span class="tag tag--a">Website</span>
+        <div class="panel panel--browser">
+          <div class="chrome"><i></i><i></i><i></i><span class="url">yourbusiness.com.au</span></div>
+          {{ wireframe() }}
+        </div></div>
+        <div class="slot slot--serp"><span class="tag tag--b">Google search</span>
+        <div class="panel panel--serp">
+          <div class="serp">
+            <div class="serp__q">{{ icon('search') }}<span>emergency plumber near me</span><span class="caret"></span></div>
+            <ol class="serp__list">
+              <li class="serp__row serp__row--you"><span class="serp__rank"></span><span><span class="serp__title">Your Business · 24/7 Plumbing</span><span class="serp__url">yourbusiness.com.au</span></span></li>
+              <li class="serp__row"><span class="serp__rank">2</span><span><span class="serp__t"></span><span class="serp__u"></span></span></li>
+              <li class="serp__row"><span class="serp__rank">3</span><span><span class="serp__t" style="width:70%"></span><span class="serp__u"></span></span></li>
+              <li class="serp__row"><span class="serp__rank">4</span><span><span class="serp__t" style="width:76%"></span><span class="serp__u" style="width:38%"></span></span></li>
+            </ol>
+          </div>
+        </div></div>
+        <div class="slot slot--camp"><span class="tag tag--c">Campaigns</span>
+        <div class="panel panel--camp">
+          <div class="camp__head"><span class="camp__label">Enquiries</span><span class="camp__chip">▲ trending up</span></div>
+          <div class="camp__bars">{% for h in [34,30,42,46,40,55,63,72,86] %}<i style="height:{{ h }}%;--i:{{ loop.index0 }}"></i>{% endfor %}</div>
+          <div class="camp__axis"><span>Wk 1</span><span>Wk 5</span><span>Wk 9</span></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--white" id="services">
+  <div class="container">
+    <div class="sec-head sec-head--split">
+      <div>
+        <p class="crumb"><b>hirokidigital.com</b><i>›</i>services</p>
+        <h2>Website Design, Google SEO &amp; Digital Marketing Services</h2>
+      </div>
+      <p>Start with the one you need most, or combine them. Each service is planned around the same numbers: how many people find you, how many get in touch, and what each enquiry costs.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc">
+        <div class="svc__art">
+          <svg viewBox="0 0 320 132" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+            <rect x="70" y="18" width="180" height="114" rx="10" fill="#fff" stroke="#DCDFEC"/>
+            <rect x="70" y="18" width="180" height="18" rx="10" fill="#FAFAFD"/><line x1="70" y1="36" x2="250" y2="36" stroke="#DCDFEC"/>
+            <circle cx="82" cy="27" r="3" fill="#F3A79A"/><circle cx="92" cy="27" r="3" fill="#F6D27A"/><circle cx="102" cy="27" r="3" fill="#9FD8B9"/>
+            <rect x="84" y="48" width="70" height="9" rx="3" fill="#0F1433"/><rect x="84" y="61" width="52" height="9" rx="3" fill="#2D3BD1"/>
+            <rect x="84" y="77" width="64" height="4" rx="2" fill="#DCDFEC"/><rect x="84" y="85" width="48" height="4" rx="2" fill="#DCDFEC"/>
+            <rect x="84" y="96" width="40" height="12" rx="6" fill="#FFC93C"/>
+            <rect x="166" y="48" width="70" height="60" rx="6" fill="#E5E8FC"/>
+            <path d="M166 100 L186 84 L202 92 L236 66 L236 108 L166 108Z" fill="#2D3BD1" opacity=".25"/>
+            <rect x="246" y="58" width="44" height="74" rx="8" fill="#0F1433"/><rect x="250" y="64" width="36" height="68" rx="5" fill="#fff"/>
+            <rect x="254" y="70" width="24" height="5" rx="2" fill="#0F1433"/><rect x="254" y="78" width="18" height="5" rx="2" fill="#2D3BD1"/><rect x="254" y="88" width="28" height="18" rx="3" fill="#E5E8FC"/><rect x="254" y="110" width="28" height="7" rx="3.5" fill="#FFC93C"/>
+            <path d="M216 104 l0 18 l5 -5 l4 8 l4 -2 l-4 -8 l7 0z" fill="#0F1433" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="svc__path">/web-design</span>
+        <h3>Website design</h3>
+        <p>Modern, responsive websites that load fast, look sharp on every screen and make it easy for visitors to get in touch.</p>
+        <ul>
+          <li>Custom design, built mobile-first</li>
+          <li>Core Web Vitals and on-page SEO built in</li>
+          <li>Fixed-price quotes, launched in weeks</li>
+        </ul>
+        <a class="svc__link" href="{{ b }}web-design.html">Website design details {{ arrow() }}</a>
+      </article>
+      <article class="svc">
+        <div class="svc__art">
+          <svg viewBox="0 0 320 132" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+            <line x1="60" y1="118" x2="260" y2="118" stroke="#C5C9DE"/>
+            {% for h in [30,38,34,48,56,52,68,80] %}<rect x="{{ 66 + loop.index0*24 }}" y="{{ 118-h }}" width="16" height="{{ h }}" rx="3" fill="{{ '#2D3BD1' if loop.index0 > 4 else '#E5E8FC' }}"/>{% endfor %}
+            <polyline points="74,72 98,70 122,62 146,60 170,46 194,44 218,30 242,20" fill="none" stroke="#F2B200" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="242" cy="20" r="5" fill="#fff" stroke="#F2B200" stroke-width="3"/>
+            <rect x="196" y="76" width="70" height="24" rx="12" fill="#fff" stroke="#DCDFEC"/><circle cx="210" cy="88" r="4" fill="#0B8F68"/><rect x="220" y="85" width="36" height="6" rx="3" fill="#0F1433"/>
+          </svg>
+        </div>
+        <span class="svc__path">/digital-marketing</span>
+        <h3>Marketing services</h3>
+        <p>Strategy and campaign management across Google Ads, Meta and email, aimed at the customers worth paying for.</p>
+        <ul>
+          <li>Google, Facebook and Instagram campaigns</li>
+          <li>Landing pages and conversion tracking</li>
+          <li>Monthly reports focused on cost per lead</li>
+        </ul>
+        <a class="svc__link" href="{{ b }}digital-marketing.html">Marketing service details {{ arrow() }}</a>
+      </article>
+      <article class="svc">
+        <div class="svc__art">
+          <svg viewBox="0 0 320 132" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+            <rect x="60" y="14" width="200" height="24" rx="12" fill="#fff" stroke="#C5C9DE"/>
+            <circle cx="77" cy="26" r="5" fill="none" stroke="#62678A" stroke-width="2"/><line x1="81" y1="30" x2="85" y2="34" stroke="#62678A" stroke-width="2" stroke-linecap="round"/>
+            <rect x="92" y="23" width="90" height="6" rx="3" fill="#0F1433"/>
+            <rect x="60" y="48" width="200" height="26" rx="7" fill="#FFF3CF"/><rect x="60" y="48" width="3" height="26" fill="#F2B200"/>
+            <text x="74" y="66" font-family="DM Mono, monospace" font-size="12" fill="#0F1433">1</text>
+            <rect x="92" y="54" width="110" height="7" rx="3" fill="#2D3BD1"/><rect x="92" y="65" width="64" height="4" rx="2" fill="#0B8F68"/>
+            <text x="74" y="94" font-family="DM Mono, monospace" font-size="12" fill="#62678A">2</text>
+            <rect x="92" y="83" width="96" height="7" rx="3" fill="#C5C9DE"/><rect x="92" y="94" width="54" height="4" rx="2" fill="#DCDFEC"/>
+            <text x="74" y="120" font-family="DM Mono, monospace" font-size="12" fill="#62678A">3</text>
+            <rect x="92" y="109" width="84" height="7" rx="3" fill="#C5C9DE"/><rect x="92" y="120" width="48" height="4" rx="2" fill="#DCDFEC"/>
+            <path d="M232 112 l0 -26 m-8 8 l8 -8 l8 8" fill="none" stroke="#0B8F68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="svc__path">/google-seo</span>
+        <h3>Google SEO</h3>
+        <p>Technical fixes, local SEO and content that move you up Google's results and grow traffic you don't pay per click for.</p>
+        <ul>
+          <li>Technical audit and on-page optimisation</li>
+          <li>Google Business Profile and local rankings</li>
+          <li>Weekly rank tracking, monthly reports</li>
+        </ul>
+        <a class="svc__link" href="{{ b }}google-seo.html">Google SEO details {{ arrow() }}</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--night" id="path">
+  <div class="container">
+    <div class="sec-head">
+      <p class="crumb"><b>hirokidigital.com</b><i>›</i>search to enquiry</p>
+      <h2>Local SEO, Google Ads &amp; Web Design: <span class="hl">one path to more enquiries</span></h2>
+      <p>Most agencies fix one step and hope the rest holds up. When SEO, campaigns and your website are planned together, each step feeds the next.</p>
+    </div>
+    <ol class="path">
+      <li><span class="path__node">{{ icon('search') }}</span><h3>Found</h3><p>SEO puts you in front of people already searching for what you sell.</p><span class="metric">impressions</span></li>
+      <li><span class="path__node">{{ icon('cursor') }}</span><h3>Clicked</h3><p>Campaigns add reach, aimed at the customers worth paying for.</p><span class="metric">clicks · CTR</span></li>
+      <li><span class="path__node">{{ icon('layout') }}</span><h3>Convinced</h3><p>A fast, clear website answers questions and builds trust.</p><span class="metric">conversion rate</span></li>
+      <li><span class="path__node">{{ icon('inbox') }}</span><h3>Enquiry</h3><p>A call or form lands with you, tracked back to its source.</p><span class="metric">cost per lead</span></li>
+    </ol>
+    <div class="night-note">
+      <p><strong>One plan, one report, one team.</strong> You see every step of the path in a single monthly report, so it's always clear what's working and where the next dollar should go.</p>
+      <a class="btn btn--saffron btn--lg" href="#contact">Map my path to more enquiries {{ arrow() }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--white" id="main-services">
+  <div class="container">
+    <div class="sec-head sec-head--split">
+      <div>
+        <p class="crumb"><b>hirokidigital.com</b><i>›</i>services</p>
+        <h2>Our Main Services: Local SEO, Google Business Profile &amp; Google Ads</h2>
+      </div>
+      <p>The specialist services behind most local SEO and lead generation work. Each one has its own page with what's included, how it works and common questions. <a href="{{ b }}services.html">See all our services</a>.</p>
+    </div>
+    <ul class="svc-links svc-links--home">
+      {% for sv in main_services %}<li><a href="{{ sv.href }}"><span class="svc-links__icon">{{ icon(sv.icon) }}</span><strong>{{ sv.label }}</strong><span>{{ sv.note }}</span>{{ arrow() }}</a></li>{% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section section--paper2" id="areas">
+  <div class="container">
+    <div class="sec-head sec-head--split">
+      <div>
+        <p class="crumb"><b>hirokidigital.com</b><i>›</i>areas</p>
+        <h2>Areas We Serve Across Australia &amp; New Zealand</h2>
+      </div>
+      <p>We work with businesses everywhere in Australia and New Zealand, with dedicated local pages and ranking heatmaps for these cities. <a href="{{ b }}areas.html">More about the areas we serve</a>.</p>
+    </div>
+    {% for c in countries %}
+    <div class="area-row">
+      <h3>{{ c.name }}</h3>
+      <ul class="area-chips">{% for ar in c.areas %}<li><a href="{{ ar.href }}">{{ ar.label }}</a></li>{% endfor %}</ul>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="container">
+    <div class="sec-head">
+      <p class="crumb"><b>hirokidigital.com</b><i>›</i>how we work</p>
+      <h2>Our SEO &amp; Website Design Process</h2>
+      <p>A simple process with a clear deliverable at every step. You always know what's happening and what comes next.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Free audit</h3><p>We review your website, search visibility and current marketing, then walk you through what we found.</p><span class="when">week 1</span></li>
+      <li><h3>Plan and quote</h3><p>You get a written plan with priorities, timelines and a fixed quote. No surprise invoices later.</p><span class="when">week 1–2</span></li>
+      <li><h3>Build and launch</h3><p>We design, build and launch, with checkpoints where you review and sign off the work.</p><span class="when">weeks 2–6</span></li>
+      <li><h3>Grow and report</h3><p>Monthly reports in plain English: what we did, what moved and what we'll do next.</p><span class="when">every month</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section--paper2" id="standards">
+  <div class="container">
+    <div class="sec-head">
+      <p class="crumb"><b>hirokidigital.com</b><i>›</i>standards</p>
+      <h2>Website Design &amp; SEO Standards in Every Project</h2>
+      <p>Speed, tracking and ownership aren't extras. They're in every website and campaign we deliver.</p>
+    </div>
+    <div class="standards">
+      <div class="vitals">
+        <h3>Built to pass Core Web Vitals</h3>
+        <p>Google's three measures of page experience. We build to the "good" threshold on mobile, where it's hardest to hit.</p>
+        {% for v in vitals %}
+        <div class="vital">
+          <div class="vital__top"><span class="vital__name">{{ v.name }}<small>{{ v.what }}</small></span><span class="vital__val">{{ v.target }}</span></div>
+          <div class="meter" style="--good:{{ v.good }}%;--poor:{{ v.poor }}%;--at:{{ v.at }}%"><i></i></div>
+          <div class="meter__scale"><span>0</span><span>{{ v.scale }}</span></div>
+        </div>
+        {% endfor %}
+      </div>
+      <ul class="checklist">
+        <li>{{ icon('code') }}<strong>Schema markup</strong><span>Structured data so Google understands your business and services.</span></li>
+        <li>{{ icon('doc') }}<strong>XML sitemap</strong><span>Submitted to Search Console on launch day.</span></li>
+        <li>{{ icon('target') }}<strong>Conversion tracking</strong><span>GA4 plus form and call tracking, tied to each ad and keyword.</span></li>
+        <li>{{ icon('pin') }}<strong>Google Business Profile</strong><span>Set up or tidied so you show up in local map results.</span></li>
+        <li>{{ icon('users') }}<strong>Accessible design</strong><span>Built to WCAG 2.2 AA so everyone can use your site.</span></li>
+        <li>{{ icon('key') }}<strong>You own everything</strong><span>Domain, site, ad and analytics accounts all in your name.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container faq-wrap">
+    <div class="sec-head">
+      <p class="crumb"><b>hirokidigital.com</b><i>›</i>faq</p>
+      <h2>SEO &amp; Website Design FAQs</h2>
+      <p>Can't see yours? Ask it in the form below and we'll answer it on our call.</p>
+    </div>
+    {{ faq_list(faqs) }}
+  </div>
+</section>
+
+<section class="section section--white" id="contact">
+  <div class="container contact">
+    <div class="contact__intro">
+      <p class="crumb"><b>hirokidigital.com</b><i>›</i>contact</p>
+      <h2>Get a Free SEO &amp; Website <span class="hl">Growth Plan</span></h2>
+      <p>Tell us about your business and where you want more customers from. We'll put together a short plan covering your website, search rankings and marketing.</p>
+      <ol class="next">
+        <li><strong>We review your business</strong><span>Your website, Google visibility and competitors.</span></li>
+        <li><strong>We reply within one business day</strong><span>With a time for a 20-minute call that suits you.</span></li>
+        <li><strong>You get your plan</strong><span>Clear recommendations you can use with or without us.</span></li>
+      </ol>
+      {{ nap(site, "nap--contact") }}
+      {% if site.map_embed %}<div class="map-embed"><iframe src="{{ site.map_embed }}" title="Hiroki Digital on Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>{% endif %}
+    </div>
+    {{ lead_form(form) }}
+  </div>
+</section>
+{% endblock %}

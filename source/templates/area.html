@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% from "_macros.html" import icon, arrow, faq_list, lead_form, crumbs, nap, linkset with context %}
+{% block main %}
+<section class="page-hero page-hero--svc">
+  <div class="container svc-hero">
+    <div>
+      {{ crumbs(page.crumbs, home) }}
+      <h1>{{ a.h1 }}</h1>
+      <p class="tagline">{{ a.tagline }}</p>
+      <p class="lede">{{ a.intro[0] }}</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary btn--lg" href="#get-started">Get a free growth plan {{ arrow() }}</a>
+        <a class="btn btn--ghost btn--lg" href="#services-here">Services in {{ a.name }}</a>
+      </div>
+    </div>
+    <aside class="facts" aria-label="At a glance">
+      <span class="facts__icon">{{ icon('pin') }}</span>
+      <dl>
+        <div><dt>Area</dt><dd>{{ a.name }}{% if a.region != a.name %}, {{ a.region }}{% endif %}</dd></div>
+        <div><dt>Country</dt><dd>{{ a.country }}</dd></div>
+        <div><dt>Services</dt><dd>Website design, marketing and Google SEO</dd></div>
+        <div><dt>How we work</dt><dd>Video calls, email and monthly reports</dd></div>
+        <div><dt>Free offer</dt><dd>Growth plan and ranking heatmap</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--white">
+  <div class="container article">
+    <div class="prose prose--article">
+      {% for para in a.intro[1:] %}<p>{{ para }}</p>{% endfor %}
+      <h2 id="market">{{ a.market.h2 }}</h2>
+      {% for para in a.market.paras %}<p>{{ para }}</p>{% endfor %}
+      <h2 id="suburbs">Suburbs and areas we cover in {{ a.name }}</h2>
+      <p>{{ a.suburbs_text }}</p>
+      <ul class="pills">{% for sub in a.suburbs %}<li>{{ sub }}</li>{% endfor %}</ul>
+      <h3 class="prose-h3">Example searches we track in {{ a.name }}</h3>
+      <ul class="pills pills--search">{% for q in a.searches %}<li>{{ q }}</li>{% endfor %}</ul>
+      <p>{{ a.edge }}</p>
+      <h2 id="industries">Industries we help in {{ a.name }}</h2>
+      <ul class="bul">{% for t, d in a.industries %}<li><strong>{{ t }}.</strong> {{ d }}</li>{% endfor %}</ul>
+      <h2 id="approach">{{ a.approach.h2 }}</h2>
+      {% for para in a.approach.paras %}<p>{{ para }}</p>{% endfor %}
+      <p>{{ a.services_text|xl(b) }}</p>
+      <h2 id="checklist">Local SEO checklist for {{ a.name }} businesses</h2>
+      <p>Whether you work with us or not, these are the steps that make the biggest difference to local rankings in {{ a.name }}.</p>
+      <ol class="bul bul--num">{% for t, d in a.checklist %}<li><strong>{{ t }}.</strong> {{ d }}</li>{% endfor %}</ol>
+      <h2 id="working">Working with Hiroki Digital from {{ a.name }}</h2>
+      <p>{{ a.working }}</p>
+      <h2 id="start">Getting started in {{ a.name }}</h2>
+      <p>{{ a.start }}</p>
+    </div>
+    <aside class="toc" aria-label="On this page">
+      <p class="toc__title">On this page</p>
+      <ol>
+        <li><a href="#market">{{ a.market.h2 }}</a></li>
+        <li><a href="#suburbs">Suburbs we cover</a></li>
+        <li><a href="#industries">Industries</a></li>
+        <li><a href="#approach">Our approach</a></li>
+        <li><a href="#checklist">Local SEO checklist</a></li>
+        <li><a href="#services-here">Services in {{ a.name }}</a></li>
+        <li><a href="#questions">Questions</a></li>
+      </ol>
+      <a class="btn btn--primary btn--block" href="#get-started">Get a free growth plan</a>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--paper2" id="services-here">
+  <div class="container">
+    <div class="sec-head">
+      <p class="crumb"><b>hirokidigital.com</b><i>›</i>services</p>
+      <h2>Services we offer in {{ a.name }}</h2>
+      <p>Website design, digital marketing and Google SEO for {{ a.name }} businesses. Start with the one you need most.</p>
+    </div>
+    <ul class="svc-links svc-links--list">
+      {% for sv in services %}<li><a href="{{ sv.href }}"><span class="svc-links__icon">{{ icon(sv.icon) }}</span><strong>{{ sv.label }}</strong><span>{{ sv.note }}</span>{{ arrow() }}</a></li>{% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section faq-section--lp" id="questions">
+  <div class="container faq-wrap">
+    <div class="sec-head">
+      <p class="crumb"><b>hirokidigital.com</b><i>›</i>faq</p>
+      <h2>SEO &amp; web design in {{ a.name }}: FAQs</h2>
+      <p>Ask anything else in the form below and we'll cover it on our call.</p>
+    </div>
+    {{ faq_list(faqs) }}
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container linksets linksets--one">
+    {{ linkset("Nearby areas we serve", nearby) }}
+  </div>
+</section>
+
+<section class="section section--white" id="contact">
+  <div class="container contact">
+    <div class="contact__intro">
+      <p class="crumb"><b>hirokidigital.com</b><i>›</i>contact</p>
+      <h2>Get a free growth plan for your {{ a.name }} business</h2>
+      <p>Tell us about your business and the parts of {{ a.name }} you serve. We'll run a ranking heatmap and send a short plan covering your website, Google rankings and marketing.</p>
+      <ol class="next">
+        <li><strong>We benchmark your rankings</strong><span>A heatmap of where you appear across {{ a.name }}.</span></li>
+        <li><strong>We reply within one business day</strong><span>With a time for a 20-minute call that suits you.</span></li>
+        <li><strong>You get your plan</strong><span>Clear next steps you can use with or without us.</span></li>
+      </ol>
+      {{ nap(site, "nap--contact") }}
+    </div>
+    {{ lead_form(form) }}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% from "_macros.html" import nap, crumbs with context %}
+{% block main %}
+<section class="page-hero">
+  <div class="container">
+    {{ crumbs([("terms", None)], home) }}
+    <h1>Website terms of use</h1>
+    <p class="lede">The terms that apply when you use this website and request a free audit, concept or plan. Last updated {{ site.privacy_updated }}.</p>
+  </div>
+</section>
+<div class="container">
+  <div class="prose">
+    <h2 id="about">1. About these terms</h2>
+    <p>This website is operated by {{ site.legal_name or site.name }}{% if site.legal_name and site.legal_name != site.name %} trading as {{ site.name }}{% endif %}{% if site.abn %} (ABN {{ site.abn }}){% endif %}. By using it, you agree to these terms. Our <a href="privacy.html">privacy policy</a> explains how we handle personal information. Paid work is covered by a separate written agreement, which takes priority over these terms.</p>
+
+    <h2 id="consumer-law">2. Your rights under consumer law</h2>
+    <p>Nothing in these terms excludes, restricts or changes any right or remedy you have under the Australian Consumer Law, or under New Zealand's <em>Consumer Guarantees Act 1993</em> or <em>Fair Trading Act 1986</em>, that cannot lawfully be excluded. If any part of these terms would do that, it doesn't apply to that extent.</p>
+
+    <h2 id="information">3. Information on this website</h2>
+    <p>Content on this website is general information about our services and about websites, marketing and search engine optimisation. It is not advice tailored to your business. We work to keep it accurate and current, but platforms such as Google change often, so please check anything important with us before relying on it.</p>
+    <p>Dashboards, charts, rankings and figures marked "sample data", "illustration" or "example" show the kind of reporting and results we work towards. They are not results achieved for a real client.</p>
+
+    <h2 id="results">4. Results</h2>
+    <p>Search rankings, traffic, ad performance and enquiries depend on things outside our control, including search engine and ad platform algorithms, competitors and your market. We do not guarantee any particular ranking, position or result. Timeframes on this website are typical estimates, not promises. We will always carry out our work with due care and skill.</p>
+
+    <h2 id="free-offers">5. Free audits, concepts and plans</h2>
+    <ul>
+      <li>Free offers on this website are genuinely free. We don't ask for payment details and there is no obligation to buy anything.</li>
+      <li>One free offer per business. We may decline a request, for example if it's outside our service area or not something we can help with, and we'll tell you if we do.</li>
+      <li>You can keep and use the audit, concept or plan we send you, including with another provider. A homepage concept is a design preview; building it into a working website is paid work.</li>
+      <li>We aim to meet the timeframes stated on each offer and will let you know promptly if we can't.</li>
+    </ul>
+
+    <h2 id="ip">6. Intellectual property</h2>
+    <p>Unless stated otherwise, the content, design, graphics, logo and code on this website belong to us or our licensors and are protected by copyright and trade mark law. You may view and print pages for your own reference. Please don't copy, republish or use our content for commercial purposes without our written permission. Ownership of work we create for clients is set out in the client agreement.</p>
+    <p>Fonts used on this website are licensed under the SIL Open Font License; the licence files are included with the site's font files.</p>
+
+    <h2 id="trade-marks">7. Third-party names and links</h2>
+    <p>Google, Google Ads, Google Business Profile, Google Maps, Meta, Facebook, Instagram, Shopify, WordPress, Webflow, Klaviyo, Mailchimp, ActiveCampaign, Yelp, Foursquare, Apple Business Connect, Bing Places and other names on this website are trade marks of their owners. We refer to them only to describe the platforms we work with. {{ site.name }} is an independent agency and is not affiliated with, endorsed by or a partner of these companies unless we say so expressly.</p>
+    <p>Links to other websites are provided for convenience. We don't control those websites and aren't responsible for their content or privacy practices.</p>
+
+    <h2 id="use">8. Using this website</h2>
+    <p>Please don't misuse this website, including by submitting false or automated enquiries, trying to gain unauthorised access, interfering with its operation or uploading malicious code.</p>
+
+    <h2 id="liability">9. Liability</h2>
+    <p>Subject to section 2, and to the extent permitted by law, we are not liable for any loss arising from your use of, or reliance on, general information on this website, or from the website being unavailable. Where our liability for a failure to comply with a consumer guarantee can lawfully be limited, it is limited to supplying the services again or paying the cost of having them supplied again.</p>
+
+    <h2 id="law">10. Governing law</h2>
+    <p>These terms are governed by the laws of {{ site.governing_law }}, Australia. This does not remove any rights you have under the laws of the place where you live.</p>
+
+    <h2 id="changes">11. Changes</h2>
+    <p>We may update these terms from time to time. The version on this page applies from the date shown above.</p>
+
+    <h2 id="contact">12. Contact</h2>
+    {{ nap(site, "nap--contact") }}
+  </div>
+</div>
+{% endblock %}

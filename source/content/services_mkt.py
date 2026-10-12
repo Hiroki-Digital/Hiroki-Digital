@@ -1,0 +1,252 @@
+"""Rank 3 service pages under Marketing (parent: digital-marketing.html)."""
+
+SERVICES_MKT = [
+dict(
+    slug="google-ads-management", name="Google Ads Management", parent="marketing", icon="search",
+    h1="Google Ads Management in Australia & New Zealand",
+    title="BEST Google Ads Agency Australia & New Zealand – looking for Google Ads Management, PPC Campaigns or Local Search Ads near me? Hiroki Digital lowers your cost per lead",
+    description="Google Ads management for Australian and NZ businesses. Search, local and Performance Max campaigns built around high-intent keywords and cost per lead.",
+    tagline="Search ads that reach people ready to buy, managed around cost per lead.",
+    timeline="campaigns live in about 2 weeks",
+    intro=[
+        "Google Ads puts your business at the top of the results the moment someone searches for what you sell. Done well, it's the fastest way to generate enquiries. Done badly, it's a quick way to spend a budget on clicks that never call.",
+        "Hiroki Digital builds and manages Google Ads campaigns for businesses across Australia and New Zealand. We focus on high-intent searches, tight location targeting and landing pages that match each ad, then report on leads and cost per lead rather than clicks.",
+    ],
+    sections=[
+        dict(h2="How we structure Google Ads campaigns", paras=[
+            "Every account starts with keyword research and a clear list of what you don't want to pay for. Negative keywords such as 'free', 'jobs' or 'DIY' often cut wasted spend on day one.",
+        ], bullets=[
+            ("Search campaigns", "Tightly themed ad groups for each service, so the ad and keyword match closely."),
+            ("Location targeting", "Your actual service area, by radius, suburb or region, with bid changes where leads are worth more."),
+            ("Performance Max", "Used when you have strong conversion data and creative to feed it, never as a starting point."),
+            ("Ad assets", "Sitelinks, callouts, call assets and location assets linked to your Google Business Profile."),
+            ("Conversion tracking", "Form fills, calls and bookings tracked as conversions, so bidding optimises for leads."),
+        ]),
+        dict(h2="What we optimise every week", paras=[
+            "Google Ads accounts drift without regular attention. Each week we review search terms, add negatives, adjust bids by location, device and time of day, pause underperforming ads and test new headlines.",
+            "Each month we look at the bigger picture: which services and areas bring the cheapest leads, where budget should move, and whether landing pages need work. You'll see the same numbers we do in a live dashboard.",
+        ]),
+        dict(h2="What's included", paras=[], bullets=[
+            ("Account audit or setup", "A review of your existing account or a clean build from scratch, in your name."),
+            ("Keyword and competitor research", "The searches worth paying for and what competitors are bidding on."),
+            ("Ad copy", "Responsive search ads with headlines that match each service and area."),
+            ("Landing page recommendations", "Fixes for your existing pages, or new pages where they're needed."),
+            ("Monthly report and call", "Leads, cost per lead, spend and next month's plan."),
+        ]),
+    ],
+    steps=[
+        ("Audit and plan", "Account review, keyword research, targeting and budget split.", "week 1"),
+        ("Build", "Campaigns, ads, assets and conversion tracking set up and tested.", "week 2"),
+        ("Launch and learn", "Search terms reviewed daily, bids and negatives adjusted.", "weeks 3–6"),
+        ("Scale", "Budget moved to the services and areas with the lowest cost per lead.", "ongoing"),
+    ],
+    local="Local targeting makes a large difference to cost per lead. Searches in [[a:sydney|Sydney]] usually cost more per click than in [[a:hamilton|Hamilton]], so budgets and bids are set area by area. Ads also perform better when they lead to a matching [[s:landing-page-design|landing page]].",
+    faqs=[
+        ("How much should I spend on Google Ads?", "It depends on your industry, area and how many leads you need. Your growth plan includes a recommended starting budget based on keyword costs in your market, and we adjust once real cost-per-lead data comes in."),
+        ("How quickly will Google Ads bring in leads?", "Search campaigns can produce enquiries in the first week or two. Expect four to eight weeks of testing before cost per lead settles."),
+        ("Do I keep my Google Ads account?", "Yes. The account is created in your name, or stays in your name if you already have one. We work on it with manager access."),
+        ("Do you charge a percentage of ad spend?", "We charge a monthly management fee agreed upfront. Your ad spend is billed directly to you by Google."),
+        ("Should I run Google Ads or SEO?", "They work well together. Ads bring enquiries quickly while SEO builds traffic you don't pay per click for. A common approach is to start with ads and add SEO once the offer is proven."),
+    ],
+    related=["c:marketing", "landing-page-design", "conversion-rate-optimisation"],
+    areas=["sydney", "hamilton", "melbourne", "brisbane"],
+),
+dict(
+    slug="facebook-instagram-ads", name="Facebook & Instagram Ads", parent="marketing", icon="megaphone",
+    h1="Facebook & Instagram Ads Management in Australia & New Zealand",
+    title="BEST Facebook & Instagram Ads Agency Australia & New Zealand – looking for Meta Ads Management, Social Media Advertising or Lead Ads near me? Hiroki Digital",
+    description="Facebook and Instagram ads management for Australian and NZ businesses. Creative, targeting and lead campaigns measured on cost per lead and sales.",
+    tagline="Social ads that stop the scroll and bring in leads you can measure.",
+    timeline="campaigns live in about 2 weeks",
+    intro=[
+        "Facebook and Instagram ads reach people before they start searching. That makes Meta ads ideal for launching a new service, promoting an offer or lead magnet, and staying in front of people who've already visited your website.",
+        "Hiroki Digital plans, creates and manages Meta ad campaigns for businesses across Australia and New Zealand. We test creative quickly, track leads properly and move budget to the ads that bring in customers.",
+    ],
+    sections=[
+        dict(h2="Creative comes first", paras=[
+            "On social platforms, the ad itself does most of the targeting. A clear hook in the first second, a specific offer and a native-looking format decide who stops and who scrolls past. We produce several creative angles for each campaign and let results pick the winners.",
+        ], bullets=[
+            ("Short video", "Simple 10 to 30 second edits using your photos, footage or screen recordings."),
+            ("Static and carousel ads", "Before-and-after work, product shots, offers and FAQs."),
+            ("Lead magnet ads", "Free guides, audits and consultations with an instant lead form or landing page."),
+            ("Retargeting", "Ads for people who visited your site or engaged with your pages but didn't enquire."),
+        ]),
+        dict(h2="Tracking that you can trust", paras=[
+            "Since privacy changes on iPhones, Meta's own reporting misses some conversions. We set up the Meta pixel and the Conversions API, pass UTM tags into your lead sheet and compare Meta's numbers with the leads that actually arrive. Decisions are based on real leads and sales.",
+            "We report weekly on spend, leads and cost per lead, and monthly on which audiences, offers and creative styles are working.",
+        ]),
+        dict(h2="What's included", paras=[], bullets=[
+            ("Campaign strategy", "Audiences, offers, budget split and the funnel from first view to enquiry."),
+            ("Ad creative", "Copy, graphics and short video edits for each campaign."),
+            ("Pixel and Conversions API", "Accurate tracking for leads, bookings and purchases."),
+            ("Weekly optimisation", "Creative tests, audience changes and budget moves."),
+            ("Monthly report", "Results in plain English with next month's plan."),
+        ]),
+    ],
+    steps=[
+        ("Plan", "Goals, audiences, offers and the creative angles to test.", "week 1"),
+        ("Create and set up", "Ads produced, tracking installed and campaigns built.", "week 2"),
+        ("Test", "Several creatives per campaign, with the losers cut quickly.", "weeks 3–6"),
+        ("Scale", "Budget increased on proven ads, with fresh creative each month.", "ongoing"),
+    ],
+    local="Meta's location targeting suits businesses with a defined service area. A gym in [[a:perth|Perth]] or a clinic in [[a:auckland|Auckland]] can target nearby suburbs and mention them in the ad. Retargeting works best alongside [[s:email-marketing-automation|email follow-up]] for people who enquire but don't book.",
+    faqs=[
+        ("Are Facebook ads worth it for small businesses?", "They work well for businesses with a clear offer and a visual product or service. They're less suited to urgent needs, where people search on Google instead."),
+        ("What budget do I need for Meta ads?", "Enough to test several creatives at once. Your growth plan includes a starting budget based on your goals and audience size."),
+        ("Do you create the ads?", "Yes. We write the copy, design graphics and edit short videos. If you have photos or footage of your work, we'll use them because real images usually perform best."),
+        ("Should I use lead forms or send people to my website?", "Instant lead forms usually produce cheaper leads, while landing pages often produce better-qualified ones. We test both and judge them on the leads that turn into customers."),
+        ("How do you track results?", "With the Meta pixel, the Conversions API and UTM tags in your lead sheet, so each lead is matched to the campaign and ad it came from."),
+    ],
+    related=["c:marketing", "email-marketing-automation", "marketing-strategy"],
+    areas=["perth", "auckland", "gold-coast", "sydney"],
+),
+dict(
+    slug="email-marketing-automation", name="Email Marketing & Automation", parent="marketing", icon="mail",
+    h1="Email Marketing & Automation in Australia & New Zealand",
+    title="BEST Email Marketing Agency Australia & New Zealand – looking for Email Automation, Klaviyo or Mailchimp Setup and Newsletters near me? Hiroki Digital",
+    description="Email marketing and automation for Australian and NZ businesses. Welcome series, lead nurture, abandoned cart and newsletters that turn subscribers into buyers.",
+    tagline="Automated emails that follow up with every lead, every time.",
+    timeline="core flows live in 2–3 weeks",
+    intro=[
+        "Most businesses spend money to win a lead, then follow up once or not at all. Email automation fixes that. It sends the right message at the right time to every lead and customer, without anyone on your team remembering to do it.",
+        "Hiroki Digital sets up and runs email marketing for businesses across Australia and New Zealand, using platforms such as Klaviyo, Mailchimp and ActiveCampaign. We start with the automated flows that make the most money, then add a regular newsletter.",
+    ],
+    sections=[
+        dict(h2="The flows we set up first", paras=[
+            "A handful of automated flows usually produce most of the revenue from email. They run in the background once they're live.",
+        ], bullets=[
+            ("Welcome series", "Three to five emails introducing your business, your best offer and what to do next."),
+            ("Lead nurture", "For enquiries that don't book straight away: answers to common questions, examples of work and a reminder of your offer."),
+            ("Abandoned cart and browse", "For online stores, reminders for people who left products in their cart."),
+            ("Post-purchase and review request", "A thank-you, helpful tips and a request for a Google review at the right moment."),
+            ("Win-back", "A message for past customers who haven't bought or booked in a while."),
+        ]),
+        dict(h2="Emails that help your Google reviews", paras=[
+            "Regular Google reviews are one of the strongest local ranking signals. A well-timed review request email, sent after a job is finished or an order arrives, turns review collection into a habit instead of a favour you remember to ask for. We link straight to your Google review form so it takes customers seconds.",
+            "We also make sure your emails comply with the Spam Act in Australia and the Unsolicited Electronic Messages Act in New Zealand: consent, a clear sender and a working unsubscribe link in every message.",
+        ]),
+        dict(h2="What's included", paras=[], bullets=[
+            ("Platform setup", "Account, domain authentication (SPF, DKIM, DMARC) and sign-up forms."),
+            ("Automated flows", "Copy and design for your welcome, nurture and review request flows."),
+            ("Newsletter template", "A branded template your team can reuse."),
+            ("Reporting", "Open, click and revenue figures for each flow and campaign."),
+        ]),
+    ],
+    steps=[
+        ("Audit", "Your list, platform, forms and existing emails.", "week 1"),
+        ("Set up", "Domain authentication, forms and segments.", "week 1–2"),
+        ("Write and build flows", "Welcome, nurture and review request emails designed and tested.", "weeks 2–3"),
+        ("Newsletters and tests", "Monthly newsletter and subject line tests.", "ongoing"),
+    ],
+    local="Email works the same whether your customers are in [[a:canberra|Canberra]] or [[a:christchurch|Christchurch]], but local details lift results, such as your opening hours, service areas and seasonal offers. Pair it with [[s:facebook-instagram-ads|Meta ads]] to grow the list faster.",
+    faqs=[
+        ("Which email platform should I use?", "Klaviyo suits online stores, Mailchimp suits simple newsletters and ActiveCampaign suits service businesses with longer sales cycles. We'll recommend one based on your business and budget."),
+        ("How often should I email my list?", "Automated flows send when they're triggered. For newsletters, once or twice a month is a good starting point for most small businesses."),
+        ("Will my emails go to spam?", "We set up domain authentication and keep lists clean, which protects deliverability. Sending only to people who opted in matters most."),
+        ("Can email help me get more Google reviews?", "Yes. A review request sent at the right time with a direct link to your Google review form is one of the easiest ways to get a steady stream of reviews."),
+        ("Do you write the emails?", "Yes. We write and design every email, and you approve them before they go live."),
+    ],
+    related=["c:marketing", "facebook-instagram-ads", "shopify-ecommerce-websites"],
+    areas=["canberra", "christchurch", "melbourne", "hobart"],
+),
+dict(
+    slug="conversion-rate-optimisation", name="Conversion Rate Optimisation", parent="marketing", icon="target",
+    h1="Conversion Rate Optimisation (CRO) in Australia & New Zealand",
+    title="BEST Conversion Rate Optimisation Agency Australia & New Zealand – looking for CRO, Landing Page Testing or More Leads From Your Website near me? Hiroki Digital",
+    description="Conversion rate optimisation for Australian and NZ websites. Find where visitors drop off, fix it and test changes that turn more traffic into enquiries.",
+    tagline="More enquiries from the traffic you already have.",
+    timeline="first results in 4–8 weeks",
+    intro=[
+        "Getting more traffic is expensive. Converting more of the visitors you already have is usually cheaper. Conversion rate optimisation (CRO) finds where people drop off on your website and fixes it with changes you can measure.",
+        "Hiroki Digital runs CRO for service businesses and online stores across Australia and New Zealand. We combine analytics, session recordings and simple tests to lift the number of calls, forms and sales your site produces.",
+    ],
+    sections=[
+        dict(h2="Where we look first", paras=[
+            "Most conversion problems hide in a few places. We start with the pages that get the most traffic and the steps where the most people leave.",
+        ], bullets=[
+            ("Above the fold", "Does the first screen say what you do, where you do it and what to do next?"),
+            ("Forms", "Too many fields, unclear errors and buttons that say 'Submit' instead of what happens."),
+            ("Mobile layout", "Tap targets, readable text and a phone number people can call in one tap."),
+            ("Trust", "Real reviews, clear pricing information, guarantees and your business details."),
+            ("Speed", "Every extra second of load time loses some visitors before they see your offer."),
+        ]),
+        dict(h2="How we test changes", paras=[
+            "For high-traffic pages, we run A/B tests that show two versions to different visitors and measure which converts better. For smaller sites without enough traffic for statistical tests, we make research-backed changes and compare conversion rates before and after, adjusting for seasonality.",
+            "Every test has a hypothesis, a single primary metric and a minimum run time. You get a log of what we tested, what we learned and what we kept.",
+        ]),
+        dict(h2="What's included", paras=[], bullets=[
+            ("Analytics audit", "Checks that GA4, conversions and call tracking record the right things."),
+            ("Behaviour research", "Heatmaps, scroll maps and session recordings on key pages."),
+            ("Test roadmap", "Ideas ranked by expected impact and effort."),
+            ("Design and build of tests", "New headlines, layouts, forms and offers built and launched."),
+            ("Monthly learnings report", "Results, conversion rates and the next tests in the queue."),
+        ]),
+    ],
+    steps=[
+        ("Measure", "Tracking checked and baseline conversion rates recorded.", "week 1"),
+        ("Research", "Heatmaps, recordings and funnel analysis on key pages.", "weeks 1–2"),
+        ("Test", "Changes designed, built and launched one at a time.", "weeks 3–8"),
+        ("Keep winners", "Proven changes rolled out across similar pages.", "ongoing"),
+    ],
+    local="Local trust signals lift conversions. Visitors in [[a:adelaide|Adelaide]] or [[a:wellington|Wellington]] are more likely to enquire when they can see you serve their area and how to reach you. CRO pairs well with a focused [[s:landing-page-design|landing page]] for each ad campaign.",
+    faqs=[
+        ("What is a good conversion rate?", "It varies a lot by industry, traffic source and offer. We measure your baseline first, then judge improvements against it rather than an industry average."),
+        ("Do I need a lot of traffic for CRO?", "A/B testing needs steady traffic. For smaller sites we make changes based on research and best practice, then compare before and after."),
+        ("Will CRO change the look of my website?", "Usually only in targeted places, such as headlines, forms and calls to action. We keep your brand consistent."),
+        ("How long until I see results?", "Fixes to obvious problems can lift enquiries within weeks. A testing program builds results over several months."),
+        ("Can you do CRO on my online store?", "Yes. We look at product pages, cart and checkout, and test changes to shipping information, trust badges and product details."),
+    ],
+    related=["c:marketing", "landing-page-design", "website-speed-optimisation"],
+    areas=["adelaide", "wellington", "brisbane", "canberra"],
+),
+dict(
+    slug="marketing-strategy", name="Marketing Strategy", parent="marketing", icon="trend",
+    h1="Marketing Strategy Consulting in Australia & New Zealand",
+    title="BEST Marketing Strategy Agency Australia & New Zealand – looking for a Digital Marketing Plan, Brand Growth Strategy or Marketing Consultant near me? Hiroki Digital",
+    description="Marketing strategy for Australian and NZ small businesses. Positioning, offers, channel plans and budgets in a 90-day plan you can act on straight away.",
+    tagline="A clear 90-day plan for where your next customers will come from.",
+    timeline="plan delivered in 2–3 weeks",
+    intro=[
+        "Plenty of small businesses try a bit of everything: some ads, some social posts, a website update. Without a plan, it's hard to know what's working or where the next dollar should go. Hiroki Digital builds practical marketing strategies for businesses across Australia and New Zealand.",
+        "The result is a 90-day plan covering who you're targeting, what you're offering, which channels to use, what to spend and how to measure it. It's written for your team to act on, with or without us.",
+    ],
+    sections=[
+        dict(h2="What a marketing strategy covers", paras=[
+            "We keep strategy practical. Every section ends with actions, owners and dates.",
+        ], bullets=[
+            ("Customers", "Who buys from you, why they choose you and what they search for."),
+            ("Positioning", "How you're different from competitors, in plain language customers understand."),
+            ("Offers", "Lead magnets and entry offers that make it easy for people to take the first step."),
+            ("Channels", "Which mix of Google SEO, Google Ads, social, email and referrals suits your business."),
+            ("Budget", "How much to spend on each channel, and what result to expect for it."),
+            ("Measurement", "The numbers to track each month, and the targets that matter."),
+        ]),
+        dict(h2="Brand growth for small businesses", paras=[
+            "Brand growth doesn't need a big budget. It comes from showing up consistently in the places your customers look: a complete Google Business Profile, a steady flow of reviews, a website that matches your ads, and useful posts and photos every week. Consistency compounds, and customers start to recognise you before they need you.",
+            "We include a simple weekly routine in every strategy: one Google Business Profile post, new photos of real work and a review request process. It takes less than an hour a week and builds both brand recognition and local rankings.",
+        ]),
+        dict(h2="What's included", paras=[], bullets=[
+            ("Discovery workshop", "A 60 to 90 minute session on your business, customers and goals."),
+            ("Competitor review", "What the top competitors in your area do online, and where the gaps are."),
+            ("90-day plan", "Channels, offers, budget, timeline and targets, in one document."),
+            ("Walkthrough call", "We go through the plan together and answer questions."),
+        ]),
+    ],
+    steps=[
+        ("Workshop", "Your business, customers, goals and current marketing.", "week 1"),
+        ("Research", "Competitors, keywords, search volumes and channel costs.", "weeks 1–2"),
+        ("Plan", "The 90-day plan written with actions, owners and budget.", "weeks 2–3"),
+        ("Review", "A check-in after 30 days to adjust based on results.", "day 30"),
+    ],
+    local="Strategy changes from market to market. Competition and costs in [[a:melbourne|Melbourne]] look very different from [[a:hobart|Hobart]], so every plan starts with research in your own area. Many plans start with [[s:local-seo|local SEO]] because it builds an asset you keep.",
+    faqs=[
+        ("Is the free 90-day growth plan the same as a full strategy?", "The free growth plan is a shorter version focused on your quickest wins. A full strategy goes deeper into positioning, offers, budgets and measurement."),
+        ("Do I have to hire you to carry out the strategy?", "No. The plan is yours to use with your own team or another provider. If you'd like, we can also handle part of it for you."),
+        ("How long does it take?", "Most strategies are delivered within two to three weeks of the discovery workshop."),
+        ("What if I have a very small budget?", "Then the plan focuses on low-cost channels such as Google Business Profile, reviews, local SEO and email, which build results over time."),
+        ("Do you work with startups?", "Yes. For new businesses, the plan focuses on validating the offer and finding the first channel that brings customers in profitably."),
+    ],
+    related=["c:marketing", "local-seo", "google-ads-management"],
+    areas=["melbourne", "hobart", "auckland", "perth"],
+),
+]

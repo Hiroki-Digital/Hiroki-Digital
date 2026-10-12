@@ -1,0 +1,26 @@
+{% extends "lp.html" %}
+{% from "_macros.html" import icon with context %}
+{% block demo %}
+<div class="stage" data-anim>
+  <span class="stage__label">illustration</span>
+  <div class="seo-stage">
+    <div class="serp" role="img" aria-label="Illustration: a Google results page for accountant near me, with Your Business climbing to position one.">
+      <div class="serp__q">{{ icon('search') }}<span>accountant near me</span><span class="caret"></span></div>
+      <ol class="serp__list">
+        <li class="serp__row serp__row--you"><span class="serp__rank"></span><span><span class="serp__title">Your Business | Local Accountants</span><span class="serp__url">yourbusiness.com.au › tax-returns</span><span class="serp__snip">Tax returns, BAS and bookkeeping for small businesses. Book a free 15-minute call.</span></span></li>
+        {% for w in [(84,52),(72,44),(78,40)] %}
+        <li class="serp__row"><span class="serp__rank">{{ loop.index + 1 }}</span><span><span class="serp__t" style="width:{{ w[0] }}%"></span><span class="serp__u" style="width:{{ w[1] }}%"></span><span class="serp__u" style="width:{{ w[0] - 6 }}%;height:5px;margin-top:8px"></span></span></li>
+        {% endfor %}
+      </ol>
+    </div>
+    <div class="traffic">
+      <div class="traffic__top">
+        <div><span>Organic clicks per month</span><strong>{{ seo.last }}</strong></div>
+        <span class="pos">avg. position 18.4 → 4.1</span>
+      </div>
+      <div class="chart">{{ seo.chart|safe }}</div>
+    </div>
+  </div>
+</div>
+<p class="caption">Illustration of a 12-month SEO campaign. Your results depend on your market and starting point.</p>
+{% endblock %}

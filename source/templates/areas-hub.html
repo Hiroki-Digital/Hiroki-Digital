@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% from "_macros.html" import icon, arrow, crumbs, nap with context %}
+{% block main %}
+<section class="page-hero">
+  <div class="container">
+    {{ crumbs(page.crumbs, home) }}
+    <h1>Areas We Serve: SEO &amp; Website Design Across Australia &amp; New Zealand</h1>
+    <p class="tagline">Local SEO planned around the places your customers actually search from.</p>
+    <p class="lede">Hiroki Digital works with businesses in every Australian state and territory and across New Zealand. These are the cities we build dedicated local pages, heatmaps and citation plans for. If your area isn't listed, we still work with you.</p>
+  </div>
+</section>
+{% for c in countries %}
+<section class="section section--tight {{ 'section--white' if loop.first else '' }}">
+  <div class="container">
+    <div class="sec-head">
+      <p class="crumb"><b>hirokidigital.com</b><i>›</i>areas<i>›</i>{{ c.name|lower }}</p>
+      <h2>SEO &amp; web design in {{ c.name }}</h2>
+      <p>{{ c.blurb }}</p>
+    </div>
+    <ul class="area-grid">
+      {% for ar in c.areas %}<li><a href="{{ ar.href }}"><span class="area-grid__region">{{ ar.region }}</span><strong>{{ ar.label }}</strong><span class="area-grid__subs">{{ ar.note }}</span>{{ arrow() }}</a></li>{% endfor %}
+    </ul>
+  </div>
+</section>
+{% endfor %}
+<section class="section section--tight">
+  <div class="container">
+    <div class="cta-band">
+      <div><h2>See where you rank across your area</h2><p>Get a free growth plan with a ranking heatmap of your service area, plus the quickest wins on your Google Business Profile and website.</p></div>
+      <a class="btn btn--saffron btn--lg" href="{{ home_anchor }}#contact">Get my free growth plan {{ arrow() }}</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

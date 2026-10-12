@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% from "_macros.html" import icon, arrow, faq_list, lead_form, crumbs, nap, linkset with context %}
+{% block main %}
+<section class="page-hero page-hero--svc">
+  <div class="container svc-hero">
+    <div>
+      {{ crumbs(page.crumbs, home) }}
+      <h1>{{ s.h1 }}</h1>
+      <p class="tagline">{{ s.tagline }}</p>
+      <p class="lede">{{ s.intro[0] }}</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary btn--lg" href="#get-started">{{ parent.cta }} {{ arrow() }}</a>
+        <a class="btn btn--ghost btn--lg" href="#process">See how it works</a>
+      </div>
+    </div>
+    <aside class="facts" aria-label="At a glance">
+      <span class="facts__icon">{{ icon(s.icon) }}</span>
+      <dl>
+        <div><dt>Service</dt><dd>{{ s.name }}</dd></div>
+        <div><dt>Part of</dt><dd><a href="{{ parent.href }}">{{ parent.label }}</a></dd></div>
+        <div><dt>Typical timeline</dt><dd>{{ s.timeline }}</dd></div>
+        <div><dt>Service area</dt><dd>{{ site.area_label }}</dd></div>
+        <div><dt>Free offer</dt><dd>{{ parent.offer[0]|upper }}{{ parent.offer[1:] }}</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--white">
+  <div class="container article">
+    <div class="prose prose--article">
+      {% for para in s.intro[1:] %}<p>{{ para }}</p>{% endfor %}
+      {% for sec in s.sections %}
+      <h2 id="{{ sec.h2|slug }}">{{ sec.h2 }}</h2>
+      {% for para in sec.paras %}<p>{{ para }}</p>{% endfor %}
+      {% if sec.bullets %}<ul class="bul">{% for t, d in sec.bullets %}<li><strong>{{ t }}.</strong> {{ d }}</li>{% endfor %}</ul>{% endif %}
+      {% endfor %}
+      <h2 id="fit">Is {{ s.name }} right for your business?</h2>
+      <p>{{ s.fit_p }}</p>
+      <ul class="bul">{% for t, d in s.fit %}<li><strong>{{ t }}.</strong> {{ d }}</li>{% endfor %}</ul>
+      <h2 id="cost">What affects the cost of {{ s.name }}</h2>
+      <p>{{ s.cost_p }}</p>
+      <ul class="bul">{% for t, d in s.cost %}<li><strong>{{ t }}.</strong> {{ d }}</li>{% endfor %}</ul>
+      <h2 id="local">{{ s.name }} for businesses across Australia &amp; New Zealand</h2>
+      <p>{{ s.local|xl(b) }}</p>
+    </div>
+    <aside class="toc" aria-label="On this page">
+      <p class="toc__title">On this page</p>
+      <ol>
+        {% for sec in s.sections %}<li><a href="#{{ sec.h2|slug }}">{{ sec.h2 }}</a></li>{% endfor %}
+        <li><a href="#fit">Is it right for you?</a></li>
+        <li><a href="#cost">What affects the cost</a></li>
+        <li><a href="#process">How it works</a></li>
+        <li><a href="#questions">Questions</a></li>
+        <li><a href="#get-started">Get started</a></li>
+      </ol>
+      <a class="btn btn--primary btn--block" href="#get-started">{{ parent.cta }}</a>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--paper2" id="process">
+  <div class="container">
+    <div class="sec-head">
+      <p class="crumb"><b>hirokidigital.com</b><i>›</i>process</p>
+      <h2>How our {{ s.name }} service works</h2>
+    </div>
+    <ol class="steps">
+      {% for t, d, when in s.steps %}<li><h3>{{ t }}</h3><p>{{ d }}</p><span class="when">{{ when }}</span></li>{% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section faq-section--lp" id="questions">
+  <div class="container faq-wrap">
+    <div class="sec-head">
+      <p class="crumb"><b>hirokidigital.com</b><i>›</i>faq</p>
+      <h2>{{ s.name }} FAQs</h2>
+      <p>Ask anything else in the form below and we'll cover it on our call.</p>
+    </div>
+    {{ faq_list(faqs) }}
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container linksets">
+    {{ linkset("Related services", related) }}
+    {{ linkset("We also serve these areas", areas) }}
+  </div>
+</section>
+
+<section class="section section--white" id="contact">
+  <div class="container contact">
+    <div class="contact__intro">
+      <p class="crumb"><b>hirokidigital.com</b><i>›</i>contact</p>
+      <h2>{{ parent.cta_h2 }}</h2>
+      <p>{{ parent.cta_p }}</p>
+      <ol class="next">
+        <li><strong>We review your business</strong><span>Your website, Google visibility and competitors.</span></li>
+        <li><strong>We reply within one business day</strong><span>With a time for a 20-minute call that suits you.</span></li>
+        <li><strong>You get your free {{ parent.offer }}</strong><span>Clear next steps you can use with or without us.</span></li>
+      </ol>
+      {{ nap(site, "nap--contact") }}
+    </div>
+    {{ lead_form(form) }}
+  </div>
+</section>
+{% endblock %}

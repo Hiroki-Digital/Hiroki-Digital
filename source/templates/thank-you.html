@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% from "_macros.html" import icon, arrow with context %}
+{% block main %}
+<section class="page-hero" data-ty>
+  <div class="container">
+    <div class="big-check">{{ icon('check') }}</div>
+    <p class="crumb"><b>hirokidigital.com</b><i>›</i>thank-you</p>
+    <h1>Thanks<span data-name></span>. We've got your details.</h1>
+    <p class="lede">We'll review your business and reply within one business day to book a quick call about your free <span data-offer>growth plan</span>. Keep an eye on your inbox, and check your spam folder just in case.</p>
+    <p class="demo-note" hidden>Preview mode: this form isn't connected to Google Sheets yet, so nothing was saved. Add your Apps Script web app URL to <code>assets/js/config.js</code> to start collecting leads.</p>
+  </div>
+</section>
+<section>
+  <div class="container ty">
+    <div>
+      <h2 class="sr-only">What happens next</h2>
+      <ol class="next">
+        <li><strong>We review your business</strong><span>Your website, Google visibility, competitors and current marketing.</span></li>
+        <li><strong>We email you within one business day</strong><span>With a couple of times for a 20-minute call.</span></li>
+        <li><strong>We walk you through your free plan</strong><span>Clear next steps you can use with or without us.</span></li>
+      </ol>
+    </div>
+    <div class="ty__box">
+      <h2>While you wait</h2>
+      <div class="ty__links">
+        <a href="web-design.html">How we design websites {{ arrow() }}</a>
+        <a href="digital-marketing.html">How we run campaigns {{ arrow() }}</a>
+        <a href="google-seo.html">How we grow Google rankings {{ arrow() }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

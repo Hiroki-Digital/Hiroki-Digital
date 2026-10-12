@@ -1,0 +1,34 @@
+{% extends "lp.html" %}
+{% from "_macros.html" import wireframe with context %}
+{% block demo %}
+<div class="stage" data-anim role="img" aria-label="Illustration: the same website layout on a desktop browser and a phone, with Lighthouse score targets of 95 for performance and 100 for accessibility, best practices and SEO.">
+  <span class="stage__label">illustration</span>
+  <div class="devices">
+    <div class="ruler" aria-hidden="true"><span style="left:0">0</span><span style="left:28.1%">360 phone</span><span style="left:60%">768 tablet</span><span style="left:100%">1280 px</span></div>
+    <div class="devices__row">
+      <div class="panel">
+        <div class="chrome"><i></i><i></i><i></i><span class="url">yourbusiness.com.au</span></div>
+        {{ wireframe(True) }}
+      </div>
+      <div class="panel phone">
+        <div class="phone__notch"></div>
+        <div class="phone__screen">
+          <div class="wf__nav anim-snap" style="--i:2"><span class="wf__logo"></span><span class="wf__btn" style="margin-left:auto;width:2.4em;background:var(--paper-2)"></span></div>
+          <div class="anim-snap" style="--i:3"><div class="wf__h"></div><div class="wf__h wf__h--2"></div><div class="wf__p"></div><div class="wf__p wf__p--s"></div></div>
+          <div class="wf__img anim-snap" style="--i:4"></div>
+          <div class="wf__cta anim-snap" style="--i:5"><i></i><i></i></div>
+        </div>
+      </div>
+    </div>
+    <div class="dials" aria-hidden="true">
+      {% for d in dials %}
+      <div class="dial">
+        <svg viewBox="0 0 64 64"><circle class="track" cx="32" cy="32" r="26" fill="none" stroke-width="6"/><circle class="val anim-dial" cx="32" cy="32" r="26" fill="none" stroke-width="6" stroke-dasharray="{{ '%.2f'|format(d.v * 1.6336) }} 163.36" style="--c:163.36;--i:{{ loop.index0 }}"/><text x="32" y="37" text-anchor="middle">{{ d.v }}</text></svg>
+        <span>{{ d.label }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<p class="caption">Lighthouse scores we build to, tested on mobile.</p>
+{% endblock %}

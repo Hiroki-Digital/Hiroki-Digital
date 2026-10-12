@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% from "_macros.html" import icon, arrow, crumbs, nap, lead_form with context %}
+{% block main %}
+<section class="page-hero">
+  <div class="container">
+    {{ crumbs(page.crumbs, home) }}
+    <h1>Website Design, SEO &amp; Digital Marketing Services in Australia &amp; New Zealand</h1>
+    <p class="tagline">Everything you need to get found, get clicked and get booked.</p>
+    <p class="lede">Hiroki Digital offers three core services, each with specialist services underneath. Start with the one that fixes your biggest gap, or combine them in one plan.</p>
+  </div>
+</section>
+{% for g in groups %}
+<section class="section {{ 'section--white' if loop.index is odd else '' }} section--tight hub-group">
+  <div class="container hub">
+    <div class="hub__core">
+      <span class="hub__icon">{{ icon(g.icon) }}</span>
+      <h2><a href="{{ g.href }}">{{ g.label }}</a></h2>
+      <p>{{ g.summary }}</p>
+      <a class="btn btn--primary" href="{{ g.href }}">{{ g.cta }} {{ arrow() }}</a>
+    </div>
+    <ul class="svc-links svc-links--hub">
+      {% for sv in g.children %}<li><a href="{{ sv.href }}"><span class="svc-links__icon">{{ icon(sv.icon) }}</span><strong>{{ sv.label }}</strong><span>{{ sv.note }}</span>{{ arrow() }}</a></li>{% endfor %}
+    </ul>
+  </div>
+</section>
+{% endfor %}
+<section class="section section--tight">
+  <div class="container">
+    <div class="cta-band">
+      <div><h2>Not sure where to start?</h2><p>Get a free growth plan. We'll benchmark your Google rankings, review your website and tell you which service will make the biggest difference first.</p></div>
+      <a class="btn btn--saffron btn--lg" href="{{ home_anchor }}#contact">Get my free growth plan {{ arrow() }}</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

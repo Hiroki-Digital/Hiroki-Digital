@@ -1,0 +1,74 @@
+{% from "_macros.html" import wireframe, icon, mark with context %}<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../site/assets/css/site.css">
+<style>
+  html,body{margin:0;width:1200px;height:630px;overflow:hidden}
+  body{background:var(--paper)}
+  .og{position:relative;width:1200px;height:630px;display:grid;grid-template-columns:600px 1fr;overflow:hidden}
+  .og::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse 60% 80% at 78% 50%,#000,transparent 75%);mask-image:radial-gradient(ellipse 60% 80% at 78% 50%,#000,transparent 75%);opacity:.8}
+  .og__l{position:relative;padding:60px 0 56px 64px;display:flex;flex-direction:column}
+  .og__brand{display:flex;align-items:center;gap:14px}
+  .og__brand svg{width:52px;height:52px}
+  .og__brand span{font-family:var(--f-display);font-weight:800;font-size:30px;letter-spacing:-.025em;color:var(--ink)}
+  .og__brand span em{font-style:normal;font-weight:600;color:var(--ink-3)}
+  .og h1{margin-top:auto;font-size:{{ og.size }}px;line-height:1.02;letter-spacing:-.035em}
+  .og h1 .hl{animation:none}
+  .og__foot{margin-top:30px;display:flex;align-items:center;gap:14px}
+  .og__foot .pill{white-space:nowrap;font-family:var(--f-body);font-weight:600;font-size:20px;color:#fff;background:var(--indigo);border-radius:999px;padding:12px 22px}
+  .og__foot .url{white-space:nowrap;font-family:var(--f-mono);font-size:18px;color:var(--ink-3)}
+  .og .traffic .chart svg{height:150px;width:100%}
+  .og__r--home{padding:30px 40px 30px 0}
+  .og__r{position:relative;display:grid;align-items:center;padding:40px 48px 40px 8px}
+  .og .stack{font-size:12px}
+  .og .stage__label{font-size:13px}
+  .og .devices .ruler{display:none}
+</style></head>
+<body><div class="og">
+  <div class="og__l">
+    <div class="og__brand">{{ mark() }}<span>hiroki <em>digital</em></span></div>
+    <h1>{{ og.h1|safe }}</h1>
+    <div class="og__foot"><span class="pill">{{ og.pill }}</span><span class="url">{{ og.url }}</span></div>
+  </div>
+  <div class="og__r{% if og.kind == 'home' %} og__r--home{% endif %}">
+    {% if og.kind == 'home' %}
+    <div class="stack">
+      <div class="slot slot--browser"><span class="tag tag--a">Website</span><div class="panel panel--browser"><div class="chrome"><i></i><i></i><i></i><span class="url">yourbusiness.com.au</span></div>{{ wireframe() }}</div></div>
+      <div class="slot slot--serp"><span class="tag tag--b">Google search</span><div class="panel panel--serp"><div class="serp"><div class="serp__q">{{ icon('search') }}<span>emergency plumber near me</span></div><ol class="serp__list">
+        <li class="serp__row serp__row--you"><span class="serp__rank"></span><span><span class="serp__title">Your Business · 24/7 Plumbing</span><span class="serp__url">yourbusiness.com.au</span></span></li>
+        <li class="serp__row"><span class="serp__rank">2</span><span><span class="serp__t"></span><span class="serp__u"></span></span></li>
+        <li class="serp__row"><span class="serp__rank">3</span><span><span class="serp__t" style="width:70%"></span><span class="serp__u"></span></span></li>
+        <li class="serp__row"><span class="serp__rank">4</span><span><span class="serp__t" style="width:76%"></span><span class="serp__u" style="width:38%"></span></span></li></ol></div></div></div>
+      <div class="slot slot--camp"><span class="tag tag--c">Campaigns</span><div class="panel panel--camp"><div class="camp__head"><span class="camp__label">Enquiries</span><span class="camp__chip">▲ trending up</span></div><div class="camp__bars">{% for h in [34,30,42,46,40,55,63,72,86] %}<i style="height:{{ h }}%"></i>{% endfor %}</div><div class="camp__axis"><span>Wk 1</span><span>Wk 5</span><span>Wk 9</span></div></div></div>
+    </div>
+    {% elif og.kind == 'web' %}
+    <div class="devices" style="padding-top:20px">
+      <div class="devices__row">
+        <div class="panel"><div class="chrome"><i></i><i></i><i></i><span class="url">yourbusiness.com.au</span></div>{{ wireframe() }}</div>
+        <div class="panel phone"><div class="phone__notch"></div><div class="phone__screen">
+          <div class="wf__nav"><span class="wf__logo"></span></div>
+          <div><div class="wf__h"></div><div class="wf__h wf__h--2"></div><div class="wf__p"></div><div class="wf__p wf__p--s"></div></div>
+          <div class="wf__img"></div><div class="wf__cta"><i></i></div></div></div>
+      </div>
+      <p class="caption" style="margin-top:22px">Lighthouse targets we build to</p><div class="dials" style="margin-top:8px">{% for d in dials %}<div class="dial" style="background:var(--surface)"><svg viewBox="0 0 64 64"><circle class="track" cx="32" cy="32" r="26" fill="none" stroke-width="6"/><circle class="val" cx="32" cy="32" r="26" fill="none" stroke-width="6" stroke-dasharray="{{ '%.2f'|format(d.v * 1.6336) }} 163.36"/><text x="32" y="37" text-anchor="middle">{{ d.v }}</text></svg><span>{{ d.label }}</span></div>{% endfor %}</div>
+    </div>
+    {% elif og.kind == 'marketing' %}
+    <div class="stage" style="padding:56px 28px 22px">
+      <span class="stage__label">sample data</span>
+      <div class="dash__head"><span class="dash__title">Campaign overview</span><span class="seg"><span>7d</span><span class="on">30d</span><span>90d</span></span></div>
+      <div class="kpis" style="grid-template-columns:repeat(2,1fr)">{% for k in mkt.kpis[:2] %}<div class="kpi"><span>{{ k.label }}</span><strong>{{ k.value }}</strong><em>{{ k.delta }}</em></div>{% endfor %}</div>
+      <div class="chart">{{ mkt.chart|safe }}</div>
+    </div>
+    {% else %}
+    <div class="stage" style="padding:56px 28px 28px">
+      <span class="stage__label">illustration</span>
+      <div class="serp"><div class="serp__q" style="font-size:16px;padding:.7em 1.1em">{{ icon('search') }}<span>accountant near me</span></div>
+        <ol class="serp__list" style="font-size:15px;gap:8px;margin-top:14px">
+          <li class="serp__row serp__row--you" style="padding:12px;grid-template-columns:30px 1fr;box-shadow:inset 4px 0 0 var(--saffron-deep)"><span class="serp__rank"></span><span><span class="serp__title">Your Business | Local Accountants</span><span class="serp__url">yourbusiness.com.au › tax-returns</span></span></li>
+          {% for w in [(84,52),(72,44)] %}<li class="serp__row" style="padding:12px;grid-template-columns:30px 1fr;border:1px solid var(--line)"><span class="serp__rank">{{ loop.index + 1 }}</span><span><span class="serp__t" style="width:{{ w[0] }}%;height:10px"></span><span class="serp__u" style="width:{{ w[1] }}%;height:7px"></span></span></li>{% endfor %}
+        </ol>
+      </div>
+      <div class="traffic" style="margin-top:16px;flex-direction:row;align-items:center;gap:18px"><div class="traffic__top" style="flex:none"><div><span>Organic clicks / month</span><strong>{{ seo.last }}</strong></div><span class="pos">position 18 → 4</span></div><div class="chart" style="flex:1;margin:0;padding:0">{{ seo.chart|safe }}</div></div>
+    </div>
+    {% endif %}
+  </div>
+</div></body></html>

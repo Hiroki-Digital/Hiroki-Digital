@@ -1,0 +1,17 @@
+{% extends "lp.html" %}
+{% block demo %}
+<div class="stage" data-anim>
+  <span class="stage__label">sample data</span>
+  <div class="dash__head"><span class="dash__title">Campaign overview <span class="caption caption--flush" style="display:block">last 30 days vs prior 30 days</span></span><span class="seg" aria-hidden="true"><span>7d</span><span class="on">30d</span><span>90d</span></span></div>
+  <div class="kpis">
+    {% for k in mkt.kpis %}<div class="kpi"><span>{{ k.label }}</span><strong>{{ k.value }}</strong><em>{{ k.delta }}</em></div>{% endfor %}
+  </div>
+  <div class="chart">{{ mkt.chart|safe }}</div>
+  <div class="legend"><span><i></i>Leads per week (last 30 days in blue)</span><span><i class="l"></i>Cost per lead</span></div>
+  <div class="channels">
+    <p class="caption caption--flush">Leads by channel</p>
+    {% for c in mkt.channels %}<div class="channel"><span>{{ c.name }}</span><span class="channel__bar"><i class="anim-grow-x" style="width:{{ c.pct }}%;--i:{{ loop.index0 }}"></i></span><b>{{ c.pct }}%</b></div>{% endfor %}
+  </div>
+</div>
+<p class="caption">Example of the dashboard every client gets. Figures are sample data.</p>
+{% endblock %}

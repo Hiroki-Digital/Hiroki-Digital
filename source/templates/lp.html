@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% from "_macros.html" import icon, arrow, faq_list, lead_form, wireframe, linkset with context %}
+{% block main %}
+<section class="lp-hero">
+  <div class="container lp-hero__grid">
+    <div class="lp-hero__copy">
+      <p class="crumb"><b>hirokidigital.com</b><i>›</i>{{ lp.crumb }}</p>
+      <h1>{{ lp.h1_kw }}</h1>
+      <p class="tagline">{{ lp.h1|safe }}</p>
+      <p class="lede">{{ lp.lede }}</p>
+    </div>
+    <div class="lp-hero__offer">
+      <div class="offer">
+        <span class="offer__label">{{ lp.offer.label }}</span>
+        <h2>{{ lp.offer.title }}</h2>
+        <ul>{% for it in lp.offer['items'] %}<li><span>{{ it|safe }}</span></li>{% endfor %}</ul>
+      </div>
+      <ul class="ticks">{% for t in lp.ticks %}<li>{{ t }}</li>{% endfor %}</ul>
+    </div>
+    {{ lead_form(form) }}
+  </div>
+</section>
+
+<section class="section section--white">
+  <div class="container split split--wide">
+    <div>
+      <p class="crumb"><b>hirokidigital.com</b><i>›</i>{{ lp.demo.crumb }}</p>
+      <h2>{{ lp.demo.h2 }}</h2>
+      <p>{{ lp.demo.p }}</p>
+      <ul class="points">
+        {% for pt in lp.demo.points %}<li>{{ icon(pt.icon) }}<strong>{{ pt.t }}</strong><span>{{ pt.d }}</span></li>{% endfor %}
+      </ul>
+    </div>
+    <div>{% block demo %}{% endblock %}</div>
+  </div>
+</section>
+
+<section class="section" id="included">
+  <div class="container">
+    <div class="sec-head">
+      <p class="crumb"><b>hirokidigital.com</b><i>›</i>what's included</p>
+      <h2>{{ lp.incl_h2 }}</h2>
+      <p>{{ lp.incl_p }}</p>
+    </div>
+    <ul class="incl">
+      {% for it in lp.incl %}<li>{{ icon(it.icon) }}<h3>{{ it.t }}</h3><p>{{ it.d }}</p></li>{% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section section--paper2" id="steps">
+  <div class="container">
+    <div class="sec-head">
+      <p class="crumb"><b>hirokidigital.com</b><i>›</i>process</p>
+      <h2>{{ lp.steps_h2 }}</h2>
+    </div>
+    <ol class="steps">
+      {% for st in lp.steps %}<li><h3>{{ st.t }}</h3><p>{{ st.d }}</p><span class="when">{{ st.when }}</span></li>{% endfor %}
+    </ol>
+    <div class="promise promise--after">
+      {{ icon(lp.promise.icon) }}
+      <div><h3>{{ lp.promise.t }}</h3><p>{{ lp.promise.d }}</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section faq-section--lp" id="questions">
+  <div class="container faq-wrap">
+    <div class="sec-head">
+      <p class="crumb"><b>hirokidigital.com</b><i>›</i>faq</p>
+      <h2>{{ lp.faq_h2 }}</h2>
+      <p>Ask anything else in the form and we'll cover it on our call.</p>
+    </div>
+    {{ faq_list(faqs) }}
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container linksets">
+    {{ linkset(lp.more_title, children) }}
+    {{ linkset(lp.areas_title, areas) }}
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container">
+    <div class="cta-band">
+      <div><h2>{{ lp.cta.h2 }}</h2><p>{{ lp.cta.p }}</p></div>
+      <a class="btn btn--saffron btn--lg" href="#get-started">{{ lp.cta.btn }} {{ arrow() }}</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

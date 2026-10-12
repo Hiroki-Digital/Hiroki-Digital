@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% from "_macros.html" import nap, crumbs with context %}
+{% block main %}
+<section class="page-hero">
+  <div class="container">
+    {{ crumbs([("accessibility", None)], home) }}
+    <h1>Accessibility statement</h1>
+    <p class="lede">We want everyone to be able to use this website, including people who use screen readers, keyboards, magnification or other assistive technology. Last reviewed {{ site.privacy_updated }}.</p>
+  </div>
+</section>
+<div class="container">
+  <div class="prose">
+    <h2 id="standard">Our standard</h2>
+    <p>This website is built to meet the Web Content Accessibility Guidelines (WCAG) 2.2 at level AA, the standard referred to by the Australian Human Rights Commission's guidance on the <em>Disability Discrimination Act 1992</em> (Cth).</p>
+
+    <h2 id="features">What we've done</h2>
+    <ul>
+      <li>One clear heading structure on every page, with landmarks and a "Skip to content" link.</li>
+      <li>Every page and form can be used with a keyboard, with a visible focus outline.</li>
+      <li>Text and controls meet WCAG AA colour contrast.</li>
+      <li>Every form field has a visible label, and error messages say what went wrong and how to fix it.</li>
+      <li>Illustrations have text descriptions, and decorative graphics are hidden from screen readers.</li>
+      <li>Animations respect the "reduce motion" setting on your device.</li>
+      <li>Pages work at 400% zoom and on small screens without sideways scrolling.</li>
+    </ul>
+    <p>We check pages with automated accessibility testing tools and by hand with a keyboard.</p>
+
+    <h2 id="limits">Known limitations</h2>
+    <p>Content we embed from other companies, such as a Google map, is controlled by that company and may not fully meet the standard. Contact details for us are always also available as text.</p>
+
+    <h2 id="feedback">Feedback and other formats</h2>
+    <p>If something on this website is hard to use, or you'd like information in another format, please email <a href="mailto:{{ site.email }}">{{ site.email }}</a>. We'll reply within two business days and work with you to provide the information in a way that suits you.</p>
+    <p>If you're not satisfied with our response, you can contact the <a href="https://humanrights.gov.au/complaints" rel="noopener">Australian Human Rights Commission</a>.</p>
+    {{ nap(site, "nap--contact") }}
+  </div>
+</div>
+{% endblock %}

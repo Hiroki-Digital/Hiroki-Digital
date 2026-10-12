@@ -1,0 +1,108 @@
+{% from "_macros.html" import mark, arrow, icon, nap with context %}<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com https://googleads.g.doubleclick.net https://www.google.com https://www.google.com.au; font-src 'self' data:; connect-src 'self' https://script.google.com https://script.googleusercontent.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://www.google.com https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com; frame-src https://www.google.com https://www.googletagmanager.com; form-action 'self'; base-uri 'self'; object-src 'none'">
+<title>{{ page.title }}</title>
+<meta name="description" content="{{ page.description }}">
+<link rel="canonical" href="{{ site.url }}{{ page.path }}">
+<meta name="robots" content="{% if page.noindex %}noindex, follow{% else %}index, follow, max-image-preview:large{% endif %}">
+<meta name="theme-color" content="#2D3BD1">
+<meta name="format-detection" content="telephone=no">
+<link rel="preload" href="{{ b }}assets/fonts/funnel-display-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ b }}assets/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ b }}assets/css/site.css?v={{ v }}">
+<link rel="icon" href="{{ b }}favicon.ico" sizes="32x32">
+<link rel="icon" href="{{ b }}favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{ b }}apple-touch-icon.png">
+<link rel="manifest" href="{{ b }}site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hiroki Digital">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="{{ page.og_title or page.title }}">
+<meta property="og:description" content="{{ page.og_description or page.description }}">
+<meta property="og:url" content="{{ site.url }}{{ page.path }}">
+<meta property="og:image" content="{{ site.url }}/assets/og/{{ page.og }}.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ page.og_alt }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.og_title or page.title }}">
+<meta name="twitter:description" content="{{ page.og_description or page.description }}">
+<meta name="twitter:image" content="{{ site.url }}/assets/og/{{ page.og }}.png">
+{% if page.schema %}<script type="application/ld+json">{{ page.schema|safe }}</script>{% endif %}
+<script src="{{ b }}assets/js/config.js?v={{ v }}" defer></script>
+<script src="{{ b }}assets/js/site.js?v={{ v }}" defer></script>
+</head>
+<body class="{{ page.body_class|default('') }}" data-base="{{ b }}">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="{{ home }}" aria-label="Hiroki Digital home">{{ mark() }}<span class="brand__word">hiroki <span>digital</span></span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span class="sr-only">Menu</span></button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <ul class="nav__links">
+        <li><a href="{{ b }}services.html"{% if page.slug == 'services' %} aria-current="page"{% endif %}>Services</a></li>
+        <li><a href="{{ b }}web-design.html"{% if page.slug == 'web' %} aria-current="page"{% endif %}>Website design</a></li>
+        <li><a href="{{ b }}digital-marketing.html"{% if page.slug == 'marketing' %} aria-current="page"{% endif %}>Marketing</a></li>
+        <li><a href="{{ b }}google-seo.html"{% if page.slug == 'seo' %} aria-current="page"{% endif %}>Google SEO</a></li>
+        <li><a href="{{ b }}areas.html"{% if page.slug == 'areas' %} aria-current="page"{% endif %}>Areas we serve</a></li>
+      </ul>
+      <div class="nav__cta"><a class="btn btn--primary" href="{{ page.cta_href|default(home_anchor ~ '#contact') }}">{{ page.cta_label|default('Get a free audit') }}</a></div>
+    </nav>
+  </div>
+</header>
+<main id="main">
+{% block main %}{% endblock %}
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="brand" href="{{ home }}" aria-label="Hiroki Digital home">{{ mark() }}<span class="brand__word">hiroki <span>digital</span></span></a>
+        <p class="footer__blurb">SEO, website design and digital marketing agency for small businesses across Australia and New Zealand.</p>
+        {{ nap(site, "nap--footer") }}
+      </div>
+      <div>
+        <h2>Services</h2>
+        <ul>
+          <li><a href="{{ b }}services.html">All services</a></li>
+          <li><a href="{{ b }}web-design.html">Website design</a></li>
+          <li><a href="{{ b }}digital-marketing.html">Marketing services</a></li>
+          <li><a href="{{ b }}google-seo.html">Google SEO</a></li>
+          <li><a href="{{ b }}services/local-seo.html">Local SEO</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Areas</h2>
+        <ul>
+          <li><a href="{{ b }}areas.html">Areas we serve</a></li>
+          <li><a href="{{ b }}areas/sydney.html">Sydney</a></li>
+          <li><a href="{{ b }}areas/melbourne.html">Melbourne</a></li>
+          <li><a href="{{ b }}areas/brisbane.html">Brisbane</a></li>
+          <li><a href="{{ b }}areas/auckland.html">Auckland</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="{{ home_anchor }}#process">How we work</a></li>
+          <li><a href="{{ home_anchor }}#faq">FAQ</a></li>
+          <li><a href="{{ home_anchor }}#contact">Request a free audit</a></li>
+          <li><a href="{{ b }}privacy.html">Privacy policy</a></li>
+          <li><a href="{{ b }}terms.html">Website terms</a></li>
+          <li><a href="{{ b }}accessibility.html">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__base">
+      <span>© <span data-year>{{ year }}</span> {{ site.legal_name or site.name }}{% if site.legal_name and site.legal_name != site.name %} trading as {{ site.name }}{% endif %}{% if site.abn %} · ABN {{ site.abn }}{% endif %}. All rights reserved.</span>
+      <span><a href="#" data-cookie-settings hidden>Cookie settings</a></span>
+    </div>
+    <p class="footer__tm">Google, Google Ads, Google Business Profile, Meta, Facebook, Instagram, Shopify, WordPress and other product names are trademarks of their owners. {{ site.name }} is an independent agency and is not affiliated with, or endorsed by, these companies.</p>
+  </div>
+</footer>
+{% if page.mcta %}<div class="mcta"><a class="btn btn--primary btn--lg" href="#get-started">{{ page.mcta }}</a></div>{% endif %}
+</body>
+</html>
